@@ -25,11 +25,11 @@ jobs:
       uses: appleboy/ssh-action@v0.1.5
       with:
         host: ${{ secrets.VPS_IP }}  # Add your VPS IP to GitHub secrets
-        username: deployuser  # SSH username on your VPS
+        username: wodo-deploy  # SSH username on your VPS
         key: ${{ secrets.VPS_SSH_KEY }}  # Add your private SSH key to GitHub secrets
         port: 22  # Default SSH port, change if needed
         script: |
-          cd /home/deployuser/repos/nextjs-app.git  # Navigate to your project directory
+          cd /home/wodo-deploy/htdocs/deploy.wodo.digital  # Navigate to your project directory
           git pull origin main  # Pull latest changes from GitHub
           npm install  # Install dependencies
           npm run build  # Build your Next.js app
